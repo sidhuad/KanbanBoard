@@ -1,163 +1,121 @@
-# 14 Full-Stack React: Kanban Board
 
-## Your Task
+# KanBan App
 
-Authentication with JSON Web Tokens (JWTs) is crucial for full-stack applications, as it provides a secure and scalable method for verifying user identities. JWTs are compact, URL-safe tokens that encode a user's authentication data, allowing servers to authenticate requests. Additionally, JWTs can include metadata and be easily verified and decoded, enhancing security while enabling seamless authentication across various parts of an application.
+![Static Badge](https://img.shields.io/badge/License-MIT-green)
 
-Your Challenge this week is to add authentication with JWT to an existing Kanban board application.
+## Description
 
-The Kanban board application has already been created. It's your job to complete the UI for the login page, add authentication with JWT to the server API, and then deploy the entire application to Render.
+- **Motivation**: The motivation behind building this Kanban app is to provide a simple, efficient way for teams and individuals to manage tasks and track progress in a visual, easy-to-use environment. This app helps streamline workflow management, providing a digital board where users can create, update, and track the status of tasks (tickets).By integrating a PostgreSQL database with Supabase for user authentication and data storage, this project serves as a full-stack solution for task management. This app can be particularly useful for teams who need a simple tool to organize their tasks, as well as those looking to learn about full-stack development, CRUD operations, and authentication using JWT tokens.
+- **Why build This Project**: This Kanban app was built to:Solve the challenge of managing and visualizing tasks in an easy and intuitive way.Learn and practice full-stack development with modern technologies, including PostgreSQL, Supabase, JWT authentication, and CRUD functionality.Build a project that could be extended in the future with additional features like notifications, task prioritization, and real-time collaboration.
+- **What problem's did it solve**: This app addresses several pain points:Task Management: Provides an easy-to-use digital Kanban board for organizing tasks.Authentication: Allows secure user authentication via JWT tokens to ensure only authorized users can create and update tasks.Real-time Updates: As tasks are updated, users can see changes in real-time, providing an efficient workflow.Data Persistence: With PostgreSQL integration via Supabase, the data is securely stored and can be accessed or updated at any time.
+- **Lesson's Learned**: Database Integration: Setting up a PostgreSQL database on Supabase and integrating it with the application allowed for secure and efficient data storage and management.JWT Authentication: Implementing JWT for authentication taught me about token-based authentication systems, which are crucial for building secure, scalable applications.Full-Stack Development: Gained experience building both the backend and frontend of an application and learned how to connect them seamlessly.CRUD Operations: Working with creating, reading, updating, and deleting tickets taught me how to effectively manage resources in an application.
+- **What makes your project stand-out**: Full-Stack Implementation: Combines both frontend and backend technologies for a seamless experience, making it a solid example of a modern web application.User Authentication: The integration of JWT tokens adds a layer of security, ensuring each user’s data remains private and protected.CRUD Functionality: Allows users to create, read, update, and delete tickets, providing full flexibility in task management.PostgreSQL with Supabase: A cloud-based database solution that’s scalable and easy to set up, which simplifies the backend for both developers and users.
 
-> **important** Make sure to download and unzip the starter code files and make your own repository with the starter code.
+## Table of Contents
 
-Before you start, download the [starter code](https://static.bc-edx.com/coding/software-dev/14-Full-Stack-React/Develop.zip).
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Future Add-ons](#future-add-ons)
+- [How to Contribute](#how-to-contribute)
+- [Tests](#tests)
+- [Questions](#questions)
+- [Links](#links)
 
-## User Story
-
-```md
-AS A member of an agile team
-I WANT a Kanban board with a secure login page
-SO THAT I can securely access and manage my work tasks
+## Installation
+- Prerequisites:Node.js (v16 or higher),PostgreSQL database (on Supabase or locally),A GitHub account (if you want to contribute or fork the project)
+- Clone the Repository:
+```
+git clone git@github.com:sidhuad/KanbanBoard.git
+cd KanbanBoard
+```
+- Install Dependencies
+```
+npm install
+```
+- Set up a PostgreSQL database on Supabase or locally.
+- Create a .env file in the root directory of your project and add the necessary environment variables:
+```
+DB_URL=your_supabase_database_url
+DB_Password=your_password
+DB_NAME=db_name
+DB_USERNAME=db_username
+JWT_SECRET=your_jwt_secret
+```
+- Start the development Server
+```
+npm run dev
 ```
 
-## Acceptance Criteria
+## Usage
+1. Sign Up and Log In:
 
-```md
-GIVEN a Kanban board with a secure login page
-WHEN I load the login page
-THEN I am presented with form inputs for username and password
-WHEN I enter my valid username and password
-THEN I am authenticated using JSON Web Tokens (JWT) and redirected to the main Kanban board page
-WHEN I enter an invalid username or password
-THEN I am presented with an error message indicating that the credentials are incorrect
-WHEN I successfully log in
-THEN a JWT is stored securely in the client's local storage for subsequent authenticated requests
-WHEN I log out
-THEN the JWT is removed from the client's local storage and I am redirected to the login page
-WHEN I try to access the Kanban board page without being authenticated
-THEN I am redirected to the login page
-WHEN I remain inactive for a defined period
-THEN my session expires, the JWT is invalidated, and I am redirected to the login page upon my next action
+    - To start using the Kanban app, sign up for a new account or log in if you already have one.
+    - After signing up, a JWT token will be assigned to authenticate your session.
+
+2. Create New Tickets:
+
+    - Navigate to the "Create Ticket" section.
+    - Add a title, description, and set an initial status for the ticket (e.g., "To Do").
+
+3. Update Ticket Status:
+
+    - Drag and drop tickets between columns (e.g., "To Do", "In Progress", "Done").
+    - The status of the ticket will be automatically updated in the database.
+
+4. Manage Your Tickets:
+
+    - You can edit or delete tickets as needed by clicking on them.
+
+## Credits
+React, node.js, PostgreSQL, Supabase, JWT, Express, Bootstrap, Render
+
+## License
+A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code. https://choosealicense.com/licenses/mit/
+
+## Future Add-ons
+- Task Prioritization: Adding priority levels to tickets (low, medium, high) to improve task management.
+- Real-Time Collaboration: Implementing WebSockets or polling to allow multiple users to collaborate and update tasks in real-time.
+- Notifications: Adding notifications when a ticket's status changes or when deadlines are approaching.
+- Task Filtering: Filtering tasks based on status, priority, or due date.
+
+## How to Contribute
+
+1. Fork the Repository
+- check installation guide for cloning, fork the repo
+
+2. Create a New Branch
+```
+git checkout -b feature/your-branch-name
 ```
 
-## Mock-Up
+3. Make Your Changes and Add them
+```
+git add -A
+```
 
-The following images show the web application's appearance and functionality:
+4. Commit Your Changes
+```
+git commit -m "changes"
+```
 
-![The Kanban board application displays a Login Required page.](./Assets/14-00-unauthenticated-page.png)
+5. Push to your fork
+```
+git push origin main feature/your-branch-name
+```
 
-![The Kanban board application displays a Login page.](./Assets/14-01-login-page.png)
+6. Open a pull Request
 
-![The Kanban board application includes a main page that displays a list of all tasks sorted into three columns according their statuses.](./Assets/14-02-main-page.png)
+## Tests
+```
+npm run test
+```
 
-## Getting Started
+## Questions
+- For Further Questions and Bug reports Please reach out to me at Github [sidhuad](https://github.com/sidhuad) or email me at adarshsidhu83@gmail.com
 
-The starter code provides a complete, working full-stack application without authentication.
-
-You will need to:
-
-* Create a `.env` file for the server that includes:
-
-  * A username for the database
-
-  * A password for the database
-
-  * A secret key for the JWT (this can be any random string)
-
-* Complete the `authenticateToken` method in `server/src/middleware/auth.ts`
-
-* Complete the login method in `server/src/routes/auth-routes.ts`
-
-* Add authentication to the API routes in `server/src/routes/index.ts`
-
-* Complete the login method in `client/src/api/authAPI.tsx`
-
-* Complete the methods of the `AuthService` in `client/src/utils/auth.ts`
-
-You can refer to the [Deploy with Render and PostgreSQL guide](https://coding-boot-camp.github.io/full-stack/render/deploy-with-render-and-postgresql) and the [Render documentation on setting environment variables](https://docs.render.com/configure-environment-variables) as needed.
-
----
-
-## Hints
-
-* Use Insomnia to test the server API directly.
-
-  * Download and unzip this [JSON file](https://static.bc-edx.com/coding/software-dev/14-Full-Stack-React/assets/Insomnia_M14_Challenge.zip) to import a request collection into Insomnia.
-
-
-## Bonus
-
-As a bonus exercise, try adding the capability to sort and filter the list of tickets in the Kanban board.
-
-## Grading Requirements
-
-> **note** If a Challenge assignment submission is marked as “0”, it's considered incomplete and won't count toward your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code.
->
-> * A repository that includes a unique name but nothing else.
->
-> * A repository that includes a README file but nothing else.
->
-> * A repository that includes only starter code.
-
-This Challenge is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-  * Application server API verifies login requests, creates and signs tokens, and validates that API requests for tickets and users include an authenticated token.
-
-  * Application's client stores tokens in `localStorage` and passes tokens to the server API with each request.
-
-  * Application must be deployed to Render.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-### Bonus
-
-Fulfilling any of the following can add up to 10 points to your grade. Note that the highest grade you can achieve is still 100:
-
-* Application contains functionality to sort Kanban tickets (5 points).
-
-* Application contains functionality to filter Kanban tickets (5 points).
-
-## Review
-
-You're required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README file describing the project
-
----
-© 2025 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## Links
+- Use Username: JollyGuru (uppercase J and G) and password: password for login.
+- [Deployed site](https://kanbanboard-r49j.onrender.com/)
+- [Github Repo](https://github.com/sidhuad/KanbanBoard)
