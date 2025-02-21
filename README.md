@@ -21,6 +21,7 @@
 - [How to Contribute](#how-to-contribute)
 - [Tests](#tests)
 - [Questions](#questions)
+- [Images](#images)
 - [Links](#links)
 
 ## Installation
@@ -114,6 +115,10 @@ npm run test
 
 ## Questions
 - For Further Questions and Bug reports Please reach out to me at Github [sidhuad](https://github.com/sidhuad) or email me at adarshsidhu83@gmail.com
+
+## Images
+![kanban1-kanbanBoardDashboard](./images/kanban1.png)
+![kanban3-editingTickets](./images/kanban3.png)
 
 ## Links
 - Use Username: JollyGuru (uppercase J and G) and password: password for login.
